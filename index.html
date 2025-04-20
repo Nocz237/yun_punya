@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aku Mau Bilang Sesuatu...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffc3a0, #ffafbd);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #ff5e78;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff3d5e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="page1">
+    <h1> Haloo Dilaa Aku Mau Bilang Sesuatu...</h1>
+    <p>kamu harus tahu</p>
+    <button onclick="goToNext()">Klik untuk Lanjut</button>
+  </div>
+
+  <script>
+    function goToNext() {
+      document.getElementById("page1").innerHTML = `
+        <p>Dilaa itu hebat banget...<p>
+        <p>Dilaa berusaha keras tiap hari nyaa, dan itu pasti akan membuahkan hasil 🌻</p>
+        <p>Jangan Lupa Istirahat</p>
+        <p>Istirahat itu penting loh, jangan lupa kasih waktu buat diri sendiri ya dilaa😌</p>
+        <p>Aku yakin banget dilaa pasti bisaa wujudkan semua impian dan cita cita dilaa</p>
+        <p>Jadi, jangan pernah ragu sama diri sendiri yaa</p>
+        <button onclick="goToFinal()">Klik untuk lanjut</button>
+      `;
+    }
+
+    function goToFinal() {
+      document.getElementById("page1").innerHTML = `
+        <p>Pokok nya dilaa harus semangat tiap hari yaa</p>
+        <button onclick="yesClicked()">Iyaaa siapp</button>
+        <button onmouseover="moveButton(this)">Engga mau</button>
+      `;
+    }
+
+    function yesClicked() {
+      document.getElementById("page1").innerHTML = `
+        <h1>YAY!!!</h1>
+        <p>Semangat terus ya dilaa, aku yakin dilaa pasti bisaa</p>
+        <p>Jangan lupa istirahat dan jaga kesehatan</p>
+        <p>Kalau dilaa lagii cape atau pengen ngeluh, dilaa bisa cerita ke aku yaa</p>
+        <p>Aku siap dengerin semua cerita dilaa</p>
+      `;
+    }
+
+    function moveButton(btn) {
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      btn.style.position = 'absolute';
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
